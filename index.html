@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Manager — Modern UI</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <h1 class="brand">Cloud Tasks</h1>
+      <p class="subtitle">Clean. Fast. Focused.</p>
+    </div>
+
+    <div class="header-right">
+      <label class="theme-toggle" title="Toggle dark / light">
+        <input id="themeSwitch" type="checkbox" aria-label="Toggle dark mode" />
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+      </label>
+
+      <a id="githubLink" class="ghost-btn" href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Controls -->
+    <section class="controls glass">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search tasks by title..." aria-label="Search tasks" />
+      </div>
+
+      <div class="filters">
+        <select id="filterPriority" aria-label="Filter by priority">
+          <option value="All">All Priorities</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button id="clearAllBtn" class="neon-outline">Clear All</button>
+      </div>
+    </section>
+
+    <!-- Task form -->
+    <section class="form-wrap glass" aria-labelledby="form-heading">
+      <h2 id="form-heading">Add / Edit Task</h2>
+
+      <div class="form-grid">
+        <input id="title" type="text" placeholder="Task title *" required />
+        <input id="dueDate" type="date" placeholder="Due date *" />
+        <select id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+        <textarea id="description" rows="3" placeholder="Short description (optional)"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button id="saveBtn" class="neon">Save Task</button>
+        <button id="cancelEditBtn" class="ghost-btn">Cancel</button>
+      </div>
+    </section>
+
+    <!-- Task list -->
+    <section class="task-list" id="taskList" aria-live="polite"></section>
+
+    <footer style="
+  text-align:center;
+  padding:18px;
+  margin-top:30px;
+  background:linear-gradient(90deg,#7c5cff,#00e0ff);
+  color:white;
+  border-radius:14px;
+  box-shadow:0 6px 30px rgba(0,0,0,0.4);
+">
+  <p><strong>Cloud Tasks</strong> — Stay Organized. Stay Productive.</p>
+  <small>© 2025 All Rights Reserved. | Rajarata University of Sri Lanka |</small>
+</footer>
+
+
+  </main>
+
+  <!-- Link script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
